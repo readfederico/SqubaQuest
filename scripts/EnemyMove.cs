@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-     public enum OccilationFuntion { Sine, Cosine }
-	public int distance;
+	public int routine;
+     public enum OccilationFuntion { Sine, Cosine };
+	public float distance;
+	private float x;
+	private float y;
+	private SpriteRenderer sharkSprite;
+	private bool direction = false; //left
 
      public void Start ()
      {
-         StartCoroutine (Oscillate (OccilationFuntion.Sine, 1f));
-     }
+		 x = transform.position.x;
+		 y = transform.position.y;
+		if (routine == 0) {
+			StartCoroutine (Oscillate (OccilationFuntion.Sine, distance));
+		 }
+		 else{
+			StartCoroutine (Oscillate (OccilationFuntion.Cosine, distance));
+		 }
+	 }
  
      private IEnumerator Oscillate (OccilationFuntion method, float scalar)
      {
@@ -18,11 +30,37 @@ public class EnemyMove : MonoBehaviour
          {
              if (method == OccilationFuntion.Sine)
              {
-                 transform.position = new Vector3 (Mathf.Sin (Time.time) * scalar, 0, 0);
+				
+				 //Debug.Log((Mathf.Sin (Time.time) * scalar));
+				 if ((Mathf.Sin (Time.time) * scalar) > (scalar-.01) && !direction)
+				 {
+					 sharkSprite = GetComponent<SpriteRenderer>();
+					 sharkSprite.flipX = !sharkSprite.flipX;
+					 direction = true;
+				 }
+				 if ((Mathf.Sin (Time.time) * scalar) < (-scalar+.01) && direction)
+				 {
+					 sharkSprite = GetComponent<SpriteRenderer>();
+					 sharkSprite.flipX = !sharkSprite.flipX;
+					 direction = false;
+				 }
+                 transform.position = new Vector3 (x+(Mathf.Sin (Time.time) * scalar), y, 0);
              }
              else if (method == OccilationFuntion.Cosine)
              {
-                 transform.position = new Vector3(Mathf.Cos(Time.time) * scalar, 0, 0);
+				 if ((Mathf.Cos (Time.time) * scalar) > (scalar-.01) && direction)
+				 {
+					 sharkSprite = GetComponent<SpriteRenderer>();
+					 sharkSprite.flipX = !sharkSprite.flipX;
+					 direction = false;
+				 }
+				 if ((Mathf.Cos (Time.time) * scalar) < (-scalar+.01) && !direction)
+				 {
+					 sharkSprite = GetComponent<SpriteRenderer>();
+					 sharkSprite.flipX = !sharkSprite.flipX;
+					 direction = true;
+				 }
+                 transform.position = new Vector3(x+(Mathf.Cos(Time.time) * scalar), y, 0);
              }
              yield return new WaitForEndOfFrame ();
          }

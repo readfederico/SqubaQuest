@@ -30,6 +30,10 @@ public class SceneController : MonoBehaviour
 	{
 		_health--;
 		healthLabel.text = "Health: " + _health;
+		if (_health == 0)
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		}
 	}
 
 	public void updateCoins()
