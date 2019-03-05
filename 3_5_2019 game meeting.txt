@@ -1,0 +1,18 @@
+how to incorporate story into game:
+
+- after splash screen: 1) scene with diver hands holding a map of Cuba with red X off the coast 2) side-view scene with diver swimming toward ship with obvious name carved on side 'La Diablesse' and pirate flag
+
+- pieces of a map in each room that, together, create a map of the final treasure room
+- the map tells you where in the last room the treasure is hidden
+- boss round has skeletons guarding 6? treasure chests, you have to choose which chest to open, air is limited so can only check a certain number of chests
+- lose coins if you fail the boss round
+
+- popup before practice level: "I bet the famous treasure is in the captain's quarters! I just need to swim to that room."
+"I know Captain Bones's infamous treasure stash is somewhere in this ship!"
+
+
+
+how to make it fun:
+
+- allows players to choose how difficult they want each level to be (keys are relatively easy to get to and coins are not necessary to collect to get to next level)
+- looking for the treasure
