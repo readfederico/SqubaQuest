@@ -1,0 +1,20 @@
+shark animated sprite (blue/gray)
+anemone animated sprite (multiple colors, draw fat tentacles)
+sting ray animated sprite (spotted? gray? up to you)
+squid animated sprite (orange)
+crab animated sprite (red)
+treasure chest animate sprite (sparkles)
+clam shell closed sprite
+clam shell open sprite (with note or variable image inside - have a version with nothing in the clam)
+harpoon gun on diver (or not, play with the look)
+harpoon sprite (make the harpoon easier to see - fatten it up)
+key sprite
+door sprite
+
+** remember, all sprites are top-down, so minimal details are fine (basic outlines of shapes plus some color)
+
+
+optional assets for next demo:
+
+wall textures
+furniture in rooms (can be placeholders for now)
