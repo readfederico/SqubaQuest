@@ -18,10 +18,10 @@ public class ShootHarpoon : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
 		{
-    		var harpInst = Instantiate(harpoon, transform.position, transform.rotation);	
-			Debug.Log(transform.rotation.z + " " + Mathf.Cos(transform.rotation.z )+ " " + Mathf.Sin(transform.rotation.z ) );
-			//harpInst.velocity = new Vector2(harpoonSpeed * (Mathf.Cos(transform.rotation.z)), harpoonSpeed * (Mathf.Sin(transform.rotation.z)));
-			harpInst.velocity = new Vector2(harpoonSpeed,0);
+    		var harpInst = Instantiate(harpoon, transform.position, transform.rotation);
+            float xspeed = harpoonSpeed * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+            float yspeed = harpoonSpeed * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
+            harpInst.velocity = new Vector2(xspeed,yspeed);
 		}
     }
 }
