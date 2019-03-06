@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
 public class SceneController : MonoBehaviour
 {
-	
-	[SerializeField] private TextMesh coinLabel;
-	[SerializeField] private TextMesh healthLabel;
+	//[SerializeField] private Canvas UICanvas;
+	[SerializeField] private Text coinLabel;
+	[SerializeField] private Text healthLabel;
 	private int _score = 0;   // coins
 	private int _health = 5;  // health bar
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
-{
+{	
 	private void OnTriggerEnter2D(Collider2D collision) {
 		Debug.Log("exit!!!");
              SceneManager.LoadScene(SceneManager.GetActiveScene().name);
