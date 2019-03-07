@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShootHarpoon : MonoBehaviour
 {
+	[SerializeField] GameObject inFrontPlayer;
 	public Rigidbody2D harpoon;
 	public float harpoonSpeed = 4f;
 	
@@ -18,7 +19,7 @@ public class ShootHarpoon : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
 		{
-    		var harpInst = Instantiate(harpoon, transform.position, transform.rotation);
+    		var harpInst = Instantiate(harpoon, inFrontPlayer.transform.position, inFrontPlayer.transform.rotation);
             float xspeed = harpoonSpeed * Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
             float yspeed = harpoonSpeed * Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
             harpInst.velocity = new Vector2(xspeed,yspeed);
